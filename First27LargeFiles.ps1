@@ -1,0 +1,2 @@
+﻿$folder = "C:\"
+Get-ChildItem $folder -recurse -ErrorAction SilentlyContinue |Sort-Object length -descending| Select-Object -first 27 @{Name="MegaBytes";Expression={"{0:F2}" -f ($_.length/1MB)}} , Fullname
